@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>สุ่มอาหารกินกานนน</title>
+    <link rel="icon" type="image/x-icon" href="img-logo/cat-removebg-preview.png">
+    <link rel="stylesheet" href="home.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+<body>
+    <div>
+        <nav>
+            <div class="nav-left">
+                <div class="bar" onclick="clickDd()" >
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+              
+                </div>
+                <div id="Dd" class="drop" style="display: none;">
+                    <a style="display: block;"href="home.html">หน้าแรก</a>
+                    <a style="display: block;"href="menu.html">เมนูทั้งหมด</a>
+                </div>
+                <img src="img-logo/cat-removebg-preview.png" alt="" >
+            </div>
+
+            <div class="nav-canter">
+                <a  href="index.html">หน้าแรก</a>
+                <a href="menu.html">เมนูทั้งหมด</a>
+            </div>
+            <div class="nav-right">
+                <button>ติดต่อ</button>
+            </div>
+        </nav>
+
+       <div class="contianer">
+            <section>
+                <div class="logo">
+                    <img src="img-logo/cat-removebg-preview.png" alt="" >
+                </div>
+
+                    <h1 >สุ่มอาหารกินกานนน</h1>
+                
+                <div class="slscted">
+                     <label for="select">เลือก เผ็ด / ไม่เผ็ด
+
+                     </label>
+                </div>
+
+                <select id="Select">
+                    <option value="" disabled selected>โปรดเลือก</option>
+                    <option value="spicy">เผ็ด</option>
+                    <option value="notSpicy">ไม่เผ็ด</option>
+                </select>
+                <div class="btn">
+                    <button onclick="handlaButtonClick()">
+                        สุ่มเลย
+                    </button>
+                </div>
+            </section>
+       </div>
+       <div class="contianer">
+            <footer>
+                <p >Vichaiyot Ngoensiri</p>
+            </footer>
+       </div>
+    </div>
+
+    <div id="02id" class="modla" style="display: none;" >
+        
+    </div>
+
+     <script type="module" src="random.js"></script>
+    
+</body>
+</html>
