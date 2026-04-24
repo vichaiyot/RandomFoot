@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>สุ่มอาหารกินกานนน</title>
+    <link rel="icon" type="image/x-icon" href="img/cat-removebg-preview.png">
+    <link rel="stylesheet" href="menu.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="">
+        <nav>
+            <div class="nav-left">
+                <div class="bar" id="Bar" >
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+              
+                </div>
+                <div id="Dd" class="drop" style="display: none;">
+                    <a style="display: block;"href="home.html">หน้าแรก</a>
+                    <a style="display: block;"href="menu.html">เมนูทั้งหมด</a>
+                </div>
+                <img src="img/cat-removebg-preview.png" alt="" >
+            </div>
+
+            <div class="nav-canter">
+                <a href="home.html">หน้าแรก</a>
+                <a href="menu.html">เมนูทั้งหมด</a>
+            </div>
+            <div class="nav-right">
+                <button>ติดต่อ</button>
+            </div>
+        </nav>
+
+      <div class="txt">
+        <h2 style="font-size: 35px;">อาหารเผ็ด</h2 style="font-size: 35px;">
+      </div>
+        <div id="menu-spicy"  class="all">
+        </div>
+        <div class="txt">
+            <h2 style="font-size: 35px;">อาหารไม่เผ็ด</h2>
+          </div>
+        <div id="menu-notspicy"  class="all">
+        </div>
+
+        <div class="container">
+            <footer>
+                <p >Vichaiyot Ngoensiri</p>
+            </footer>
+       </div>
+    </div>
+    
+    <script  type="module">
+    import{spicy} from './spicy.js';
+    import{notSpicy} from './notspicy.js';
+    
+
+   
+
+    const menuspicy = document.getElementById('menu-spicy');
+    const menunotspicy = document.getElementById('menu-notspicy');
+    
+
+    spicy.forEach(dish =>{
+        const box = document.createElement('div');
+            box.className = 'box';
+            box.innerHTML = ` 
+            <img src="${dish.img}" alt="${dish.name}">
+            <h3>${dish.name}</h3>`;
+    
+            menuspicy.appendChild(box);
+    });
+
+
+    notSpicy.forEach(dish =>{
+        const box = document.createElement('div');
+            box.className = 'box';
+            box.innerHTML = ` 
+            <img src="${dish.img}" alt="${dish.name}">
+            <h3>${dish.name}</h3>`;
+    
+            menunotspicy.appendChild(box);
+    });
+ 
+    const button = document.getElementById('Bar');
+
+    button.addEventListener("click",function(){
+        document.getElementById('Dd').style.display = 'block';
+    })
+    window.onclick = function(event){
+    if(!event.target.matches('.bar')){
+        var dropdowns = document.getElementsByClassName("drop");
+        for(var i=0; i<dropdowns.length; i++){
+            if(document.getElementById('Dd').style.display = 'block'){
+                document.getElementById('Dd').style.display = 'none';
+            }
+        }
+    }
+ }
+ </script>
+</body>
+</html>
